@@ -28,38 +28,55 @@ private extension ViewController {
     
     @IBAction func scheduleNotification(_ sender: UIButton)
     {
-        guard let url = Bundle.main.url(forResource: "test", withExtension: "jpeg") else {
-            fatalError("Programmer Error")
+//        center.removeAllDeliveredNotifications()
+        
+        guard let request = try? notificationRequest(for: "com.fishhook.test1", triggerTime: 5) else {
+            fatalError()
         }
-        
-        let attachment: UNNotificationAttachment
-        do {
-            attachment = try UNNotificationAttachment(identifier: "com.fishhook.viewcontroller.attachment",
-                                                          url: url,
-                                                          options: nil)
-        }
-        catch {
-            errorLabel?.text = error.localizedDescription
-            return
-        }
-        
-        let content = UNMutableNotificationContent()
-        content.title = String.localizedUserNotificationString(forKey: "Test Title", arguments: nil)
-        content.body = String.localizedUserNotificationString(forKey: "Test Body", arguments: nil)
-        content.attachments = [ attachment ]
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10,
-                                                        repeats: false)
-        
-        
-        let request = UNNotificationRequest(identifier: "com.fishhook.viewcontroller.notification.request",
-                                            content: content,
-                                            trigger: trigger)
         
         center.add(request) { (error) in
             if let error = error {
                 self.errorLabel?.text = error.localizedDescription
             }
         }
+        
+//        center.removeAllPendingNotificationRequests()
+        
+        guard let request2 = try? notificationRequest(for: "com.fishhook.test2", triggerTime: 10) else {
+            fatalError()
+        }
+        
+        center.add(request2) { (error) in
+            if let error = error {
+                self.errorLabel?.text = error.localizedDescription
+            }
+        }
+    }
+    
+    func notificationRequest(for identifier: String, triggerTime time: TimeInterval?) throws -> UNNotificationRequest
+    {
+        guard let url = Bundle.main.url(forResource: "Week1-1", withExtension: "png") else {
+            fatalError("Programmer Error")
+        }
+        
+        let attachment = try UNNotificationAttachment(identifier: "\(identifier).attachment",
+                                                      url: url,
+                                                      options: nil)
+        
+        let content = UNMutableNotificationContent()
+        content.title = String.localizedUserNotificationString(forKey: "Test Title", arguments: nil)
+        content.body = String.localizedUserNotificationString(forKey: " ", arguments: nil)
+        content.attachments = [ attachment ]
+//        content.setValue("YES", forKeyPath: "shouldAlwaysAlertWhileAppIsForeground")
+        
+        var trigger: UNNotificationTrigger? = nil
+        if let time = time {
+            trigger = UNTimeIntervalNotificationTrigger(timeInterval: time,
+                                                        repeats: false)
+        }
+        
+        return UNNotificationRequest(identifier: "\(identifier).request",
+            content: content,
+            trigger: trigger)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2BB1B31F5214AC00716032 /* Week1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2BB1B21F5214AC00716032 /* Week1-1.png */; };
 		2A34923A1F5112EE00BAC226 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3492391F5112EE00BAC226 /* AppDelegate.swift */; };
 		2A34923C1F5112EE00BAC226 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34923B1F5112EE00BAC226 /* ViewController.swift */; };
 		2A34923F1F5112EE00BAC226 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A34923D1F5112EE00BAC226 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A2BB1B21F5214AC00716032 /* Week1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Week1-1.png"; sourceTree = "<group>"; };
 		2A3492361F5112EE00BAC226 /* Local Notifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Local Notifications.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3492391F5112EE00BAC226 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A34923B1F5112EE00BAC226 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		2A3492381F5112EE00BAC226 /* Local Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				2A2BB1B21F5214AC00716032 /* Week1-1.png */,
 				2A34924B1F5116E600BAC226 /* test.jpeg */,
 				2A3492391F5112EE00BAC226 /* AppDelegate.swift */,
 				2A34923B1F5112EE00BAC226 /* ViewController.swift */,
@@ -127,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A2BB1B31F5214AC00716032 /* Week1-1.png in Resources */,
 				2A34924C1F5116E600BAC226 /* test.jpeg in Resources */,
 				2A3492441F5112EE00BAC226 /* LaunchScreen.storyboard in Resources */,
 				2A3492411F5112EE00BAC226 /* Assets.xcassets in Resources */,
@@ -308,6 +312,7 @@
 				2A34924A1F5112EE00BAC226 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
